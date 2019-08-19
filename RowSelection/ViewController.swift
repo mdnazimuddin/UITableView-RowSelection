@@ -65,11 +65,13 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func addItem(_ sender: Any) {
-        data.append(txtField.text!)
-        let indexPath = IndexPath(row: data.count-1, section: 0)
-        tblView.beginUpdates()
-        tblView.insertRows(at: [indexPath], with: .automatic)
-        tblView.endUpdates()
+        if !txtField.text!.isEmpty {
+            data.append(txtField.text!)
+            let indexPath = IndexPath(row: data.count-1, section: 0)
+            tblView.beginUpdates()
+            tblView.insertRows(at: [indexPath], with: .automatic)
+            tblView.endUpdates()
+        }
         
         txtField.text = ""
     }
@@ -90,6 +92,12 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         cell.textLabel?.text = data[indexPath.row]
         return cell
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            data.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectDeselect(tableView: tableView, indexPath: indexPath)

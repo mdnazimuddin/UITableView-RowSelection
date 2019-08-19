@@ -30,7 +30,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFH-h5-Q0t">
                                         <rect key="frame" x="15" y="15" width="120" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
-                                        <state key="normal" title="GET VIEW">
+                                        <state key="normal" title="Selected Items">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -184,7 +184,6 @@
                                             <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="addItem:" destination="tvB-1I-CNh" eventType="touchUpInside" id="vkx-zh-crc"/>
                                             <action selector="closeAddItemView:" destination="tvB-1I-CNh" eventType="touchUpInside" id="pHq-Yx-vCD"/>
                                         </connections>
                                     </button>
